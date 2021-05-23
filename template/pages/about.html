@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="bg-image-06">
+    <div class="breadcrumb-wrapper">
+      <div class="container context-dark section-30 section-xl-top-120">
+        <h5>Frequently Asked Questions</h5>
+        <h1 class="text-ubold">FAQ page</h1>
+        <ol class="breadcrumb">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li>FAQ page
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+<section class="section-80 section-lg-120 bg-image-02">
+<div class="container container-wide text-xl-left">
+<div class="row">
+  <div class="col-lg-7 col-xl-6 col-xxl-5 col-lg-preffix-5 col-xxl-preffix-6">
+    <h2 class="text-ubold">Frequently Asked Questions</h2>
+    <hr class="divider divider-lg-left divider-primary divider-80">
+    <!-- Responsive-tabs-->
+    <div class="responsive-tabs responsive responsive-tabs-classic" data-type="accordion">
+      <ul class="resp-tabs-list tabs-1 text-center tabs-group-default">
+        <li>How do I select a one-way flight?</li>
+        <li>Can I make ticket reservations both for domestic and international flights?</li>
+        <li>Why can't I find flights for a specific airline I' m interested in?</li>
+        <li>How can I be sure that my reservation has been completed successfully?</li>
+        <li>Do I have to confirm the departure time of my flight?</li>
+      </ul>
+      <div class="resp-tabs-container text-md-left tabs-group-default">
+        <div>
+          <p>Using the flights search engine you have two options: either simple journey (One way) or with return (Round trip). Round trip is the default option. If you are interested in a one way journey you will have to select the respective button.</p>
+        </div>
+        <div>
+          <p>Yes, you can select flights from any airport to everywhere in the world.</p>
+        </div>
+        <div>
+          <p>Using our search engine you can make ticket reservations for most of the airlines in the world. However you cannot book tickets for charter flights, flights operated by specific low cost airlines as well as by companies that don' t have representation in Greece.</p>
+        </div>
+        <div>
+          <p>Right after the completion of the reservation procedure on our web page, a success page will be displayed on your screen and an e-mail containing your e-ticket and related information will be sent to you within 24 hours from the moment you have paid for your reservation (usually this takes several minutes).</p>
+        </div>
+        <div>
+          <p>If you want to confirm the departure time of your flight we suggest you contact the airline or the airport in order to be accurately informed. We will make any possible effort to inform you in the event that something changed on your flight. Nevertheless, in case of bad weather conditions, we strongly recommend that you contact directly the airline or the airport.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section class="section-80 section-xl-120 bg-gray-lighter">
+<div class="container container-wide">
+<div class="row justify-content-sm-center">
+  <div class="col-lg-8 col-xl-6">
+    <h2 class="text-ubold">Some of Your Questions</h2>
+    <hr class="divider divider-primary divider-80">
+    <div class="text-lg-left offset-custom-60">
+      <ul class="list-marked">
+        <li><a class="text-info-dr" href="#q1" data-custom-scroll-to="q1">Can I make changes to my reservation after I have purchased it?</a></li>
+        <li><a class="text-info-dr" href="#q2" data-custom-scroll-to="q2">I noticed some flights are operated by other airlines and have a 24-hour hold. What does this mean?</a></li>
+        <li><a class="text-info-dr" href="#q3" data-custom-scroll-to="q3">Does the number of passengers I choose limit my lowest fare flight choices?</a></li>
+        <li><a class="text-info-dr" href="#q4" data-custom-scroll-to="q4">Can I book flights for multiple-stop itineraries online?</a></li>
+        <li><a class="text-info-dr" href="#q5" data-custom-scroll-to="q5">I received a promotional offer to be redeemed online. How can I redeem it?</a></li>
+      </ul>
+      <dl class="list-terms-variant-1">
+        <dt class="h5" id="q1">Can I make changes to my reservation after I have purchased it?</dt>
+        <dd>
+          <p>Using the flights search engine you have two options: either simple journey (One way) or with return (Round trip). Round trip is the default option. If you are interested in a one way journey you will have to select the respective button.</p>
+        </dd>
+        <dt class="h5" id="q2">I noticed some flights are operated by other airlines and have a 24-hour hold. What does this mean?</dt>
+        <dd>
+          <p>Flights operated by certain partners require a 24-hour hold so we can ensure that your preferred flight and seat are processed with that partner. Once we receive confirmation of your itinerary from the partner airline, we will notify you via email.</p>
+        </dd>
+        <dt class="h5" id="q3">Does the number of passengers I choose limit my lowest fare flight choices?</dt>
+        <dd>
+          <p>Yes. Based on the number of travelers in your group, the lowest fare may not be available on a particular flight due to seat availability.</p>
+        </dd>
+        <dt class="h5" id="q4">Can I book flights for multiple-stop itineraries online?</dt>
+        <dd>
+          <p>Yes, you can purchase tickets for one-way or multiple-destination travel by selecting “One way” or “Multi-city” at the top of the flight search box on the home page.</p>
+        </dd>
+        <dt class="h5" id="q5">I received a promotional offer to be redeemed online. How can I redeem it?</dt>
+        <dd>
+          <p>If you have an offer code, you can select “All Search Options” on the home page and then enter it in the field at the bottom of the page. If you are redeeming a gift certificate or electronic travel certificate, it can be redeemed in the Payment section during the flight booking process.</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+{% endblock %}

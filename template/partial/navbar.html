@@ -1,0 +1,43 @@
+{% load static %}
+<header class="page-header">
+    <!-- RD Navbar-->
+    <div class="rd-navbar-wrap bg-gray-dark">
+      <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="1px" data-xl-stick-up-offset="1px" data-xxl-stick-up-offset="1px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+        <div class="rd-navbar-inner">
+          <!-- RD Navbar Panel-->
+          <div class="rd-navbar-panel">
+            <!-- RD Navbar Toggle-->
+            <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+            <!-- RD Navbar Brand-->
+            <div class="rd-navbar-brand"><a class="d-inline-block brand-name" href="{% url 'index' %}"><img class="img-responsive center-block" src="{% static 'images/white.png' %}" width="166" height="55" alt=""></a></div>
+          </div>
+          <div class="rd-navbar-nav-wrap">
+            <!-- RD Navbar Nav-->
+            <ul class="rd-navbar-nav">
+              <li class="active"><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About</a>
+                <!-- RD Navbar Dropdown-->
+               
+              </li>
+              <li><a href="{% url 'blog' %}"">Blog</a>
+                <!-- RD Navbar Dropdown-->
+              </li>
+            
+              <li><a href="{% url 'contact' %}">Contacts</a></li>
+            </ul>
+            <!--RD Navbar Search-->
+            <div class="rd-navbar-search"><a class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span class="fa-search"></span></a>
+              <form class="rd-search" data-search-live="rd-search-results-live" action="#" method="GET">
+                <div class="form-wrap">
+                  <label class="form-label" for="rd-navbar-search-form-input">Search</label>
+                  <input class="form-input rd-navbar-search-form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
+                </div>
+                <button class="button fa-search"></button>
+                <div class="rd-search-results-live" id="rd-search-results-live"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
