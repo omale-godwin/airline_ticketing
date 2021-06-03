@@ -1,0 +1,157 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="bg-image-06">
+    <div class="breadcrumb-wrapper">
+      <div class="container context-dark section-30 section-xl-top-120">
+        <h5>Pick the Best Ticket</h5>
+        <h1 class="text-ubold">Tickets List</h1>
+        <ol class="breadcrumb">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="#">Pages</a></li>
+          <li>Tickets List
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+<section class="section-80 section-lg-120 bg-gray-lighter">
+<div class="container container-wide">
+<div class="row row-50 text-xl-left">
+  <div class="col-xl-8">
+    <div class="inset-xxl-right-80">
+        <h3 style="color: green;" class="text-ubold">available Flight From {{ mydata.from_city }} To {{ mydata.to_city }}</h3>
+        <h2 class="text-gray">ON {{date_choosen}}</h2>
+        <hr class="divider divider-lg-left divider-primary divider-80">
+        <div class="row row-20 row-offset-7 justify-content-sm-between text-left">
+          
+        
+        </div>
+      <ul class="list-tickets">
+          {% if queryset_list %}
+           {% for query in queryset_list %}
+           <li class="list-item">
+            <div class="list-item-inner">
+              <div class="list-item-main">
+                <div class="list-item-top">
+                  <div class="list-item-logo"><img src="{{ query.flight_no.jet_photo.url }}" alt=""></div>
+                  <div class="list-item-content">
+                    <div class="list-item-content-left">
+                      <div class="text-bold text-base">{{query.from_city}}</div><span class="small d-block">Start</span>
+                    </div>
+                    <div class="list-item-content-line-wrapper small">
+                      <div class="list-item-content-line-top"></div>
+                      <div class="list-item-content-line"></div>
+                      <div class="list-item-content-line-bottom text-info-dr"></div>
+                    </div>
+                    <div class="list-item-content-right">
+                      <div class="text-bold text-base">{{query.to_city}}</div><span class="small d-block">Landed</span>
+                    </div>
+                  </div>
+                </div>
+                <hr class="divider divider-wide">
+                <div class="list-item-bottom">
+                  <div class="list-item-logo"><img src="images/logo-01.jpg" alt=""></div>
+                  <div class="list-item-content">
+                    <div class="list-item-content-left">
+                      <div class="text-bold text-base">{{query.departure_time}}</div><span class="small d-block">Time Start</span>
+                    </div>
+                    <div class="list-item-content-line-wrapper small">
+                      <div class="list-item-content-line-top">2h 40m</div>
+                      <div class="list-item-content-line"></div>
+                      <div class="list-item-content-line-bottom"><span class="text-primary-dr">Direct</span><span> </span></div>
+                    </div>
+                    <div class="list-item-content-right">
+                      <div class="text-bold text-base">{{query.arrival_time}}</div><span class="small d-block">Time Landed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="list-item-footer"><span class="small">{{class}}</span>
+                <h5 class="text-bold list-item-price">#{{price}}</h5><a class="button button-primary button-xs button-no-shadow" href="{% url 'confirm' query.id %}">select</a>
+              </div>
+            </div>
+            <div class="small text-gray-light list-item-subtitle">Operated by Nigerian Airlines</div>
+          </li>
+           {% endfor%}
+
+           {% else%}
+           <h4>NO DATA</h4>
+
+           {% endif %}
+      
+      
+      </ul>
+            <!-- Bootstrap Pagination-->
+            <ul class="pagination">
+              <li class="disabled"><span aria-label="Previous"><span class="fa-chevron-left" aria-hidden="true"></span></span></li>
+              <li class="active"><span>1</span></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#" aria-label="Next"><span class="fa-chevron-right" aria-hidden="true"></span></a></li>
+            </ul>
+    </div>
+  </div>
+  <div class="col-xl-4 tickets-aside">
+    <div class="row row-30">
+      <div class="col-xl-12 col-md-6">
+              <!-- Thumbnail-->
+              <div class="thumbnail-btn"><img class="img-responsive center-block thumbnail-img" src="images/tickets-01.jpg" width="570" height="300" alt="">
+                <div class="caption">
+                  <h4>Find a Hotel</h4><a class="button button-primary button-xs" href="blog-single-post.html">read more</a>
+                </div>
+              </div>
+      </div>
+      <div class="col-xl-12 col-md-6">
+              <!-- Thumbnail-->
+              <div class="thumbnail-btn"><img class="img-responsive center-block thumbnail-img" src="images/tickets-02.jpg" width="570" height="300" alt="">
+                <div class="caption">
+                  <h4>Rent a Car</h4><a class="button button-primary button-xs" href="blog-single-post.html">read more</a>
+                </div>
+              </div>
+      </div>
+    </div>
+    <h5 class="text-bold hr-title">Latest Blog Posts</h5>
+    <div class="row row-50 row-md-30 justify-content-sm-center text-md-left">
+      <div class="col-md-10 col-lg-6 col-xl-12">
+              <!-- Post-->
+              <div class="unit flex-column flex-md-row">
+                <div class="unit-left"><img class="center-block img-responsive" src="images/post-01.jpg" width="180" height="110" alt=""></div>
+                <div class="unit-body">
+                  <h5 class="text-bold" style="line-height: 28px;"><a class="text-info-dr" href="blog-single-post.html">9 Ways to Become a Successful <br class='veil.d-xl-block'> Travel Blogger</a></h5>
+                  <hr class="divider divider-wide">
+                  <p><span class="text-middle text-gray-light icon icon-xs mdi mdi-calendar-clock"></span><span class="text-middle inset-left-8">Sep 12, 2019 at 3:28pm</span></p>
+                </div>
+              </div>
+      </div>
+      <div class="col-md-10 col-lg-6 col-xl-12">
+              <!-- Post-->
+              <div class="unit flex-column flex-md-row">
+                <div class="unit-left"><img class="center-block img-responsive" src="images/post-02.jpg" width="180" height="110" alt=""></div>
+                <div class="unit-body">
+                  <h5 class="text-bold" style="line-height: 28px;"><a class="text-info-dr" href="blog-single-post.html">Visiting Paris on a Budget</a></h5>
+                  <hr class="divider divider-wide">
+                  <p><span class="text-middle text-gray-light icon icon-xs mdi mdi-calendar-clock"></span><span class="text-middle inset-left-8">Sep 12, 2019 at 3:28pm</span></p>
+                </div>
+              </div>
+      </div>
+      <div class="col-md-10 col-lg-12">
+              <!-- Post-->
+              <div class="unit flex-column flex-md-row">
+                <div class="unit-left"><img class="center-block img-responsive" src="images/post-03.jpg" width="180" height="110" alt=""></div>
+                <div class="unit-body">
+                  <h5 class="text-bold" style="line-height: 28px;"><a class="text-info-dr" href="blog-single-post.html">How to Make Travel Videos</a></h5>
+                  <hr class="divider divider-wide">
+                  <p><span class="text-middle text-gray-light icon icon-xs mdi mdi-calendar-clock"></span><span class="text-middle inset-left-8">Sep 12, 2019 at 3:28pm</span></p>
+                </div>
+              </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+{% endblock %}

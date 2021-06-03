@@ -11,12 +11,14 @@
         <div class="swiper-slide" data-slide-bg="{% static 'images/background-08.jpg' %}"></div>
       </div>
     </div>
+  
     <div class="swiper-onSlider">
       <div class="container container-wide section-70 section-xxl-top-200 section-xxl-bottom-220">
         <div class="row justify-content-sm-center">
           <div class="col-xxl-6 col-xl-9 col-lg-11">
             <div class="responsive-tabs text-lg-left nav-custom-dark view-animate fadeInUpSmall" data-type="horizontal">
               <!-- Responsive-tabs-->
+              {% include 'partial/_alerts.html' %}
               <ul class="nav-custom-tabs resp-tabs-list">
                 <li class="nav-item"><span class="icon mdi mdi-airplane"></span><span>Flights</span>
                 </li> <li class="nav-item"><span class="icon mdi mdi-hotel"></span><span>Manage By Booking</span></li>
@@ -24,19 +26,18 @@
               </ul>
               <div class="resp-tabs-container nav-custom-tab nav-custom-wide">
                 <div>
-                  <form class="small" method="post" action="#">
+                  <form class="small" method="GET" action="{% url 'ticket' %}">
+                    {% csrf_token% }
                     <div class="row row-20 row-md-23">
                       <div class="col-lg-8">
                         <div class="form-wrap radio-inline-wrapper">
+                          <!-- <label class="radio-inline">
+                            <input class="checkbox" name="input-group-radio" value="radio-1" id="rounds" type="radio" >Round Trip
+                          </label> -->
                           <label class="radio-inline">
-                            <input name="input-group-radio" value="radio-1" type="radio" checked>Round Trip
+                            <input  name="input-group-radio" value="radio-2" type="radio" checked>One Way
                           </label>
-                          <label class="radio-inline">
-                            <input name="input-group-radio" value="radio-2" type="radio">One Way
-                          </label>
-                          <label class="radio-inline">
-                            <input name="input-group-radio" value="radio-3" type="radio">Multi-city
-                          </label>
+                          -->
                         </div>
                       </div>
                       <div class="col-lg-4 text-lg-right">
@@ -52,12 +53,25 @@
                             <div class="form-wrap">
                               <label class="form-label-outside">From</label>
                               <!--Select 2-->
-                              <select class="form-input select-filter" data-minimum-results-for-search="Infinity">
-                                <option>New Delhi (DEL)</option>
-                                <option value="2">London (LHR)</option>
-                                <option value="3">Atlanta (ATL)</option>
-                                <option value="4">Tokyo (HND)</option>
-                                <option value="5">Chicago (ORD)</option>
+                              <select class="form-input select-filter" data-minimum-results-for-search="Infinity" name="from_city">
+                                <option value="Abuja (ABV)">Abuja (ABV)</option>
+                               
+                                <option value="Akure (AKR)">Akure (AKR)</option>
+                                <option value="Asaba (ABB)">Asaba (ABB)</option>
+                                <option value="5">Benin (BNI)</option>
+                                <option value="2">Calaba (CBK)</option>
+                                <option value="3">Enugu (ENU)</option>
+                                <option value="4">Ibadon (IBA)</option>
+                                <option value="5">Ilorin (ILR)</option>
+                                <option value="2">Jos (JOS)</option>
+                                <option value="3">Kano (KAN)</option>
+                                <option value="5">Lagos (LOG)</option>
+                                <option value="4">Port Harcourt (PHC)</option>
+                                <option value="5">Owere (QOW)</option>
+                                <option value="2">Sokoto  (SKO)</option>
+                                <option value="3">Oyo (QUO)</option>
+                                <option value="4">Yola (YOL)</option>
+                               
                               </select>
                             </div>
                             <div class="form-wrap">
@@ -68,14 +82,20 @@
                           </div>
                           <div class="col-12 col-sm">
                             <div class="form-wrap">
-                              <label class="form-label-outside">To</label>
+                              <label class="form-label-outside" style="color: white !important;">To</label>
                               <!--Select 2-->
-                              <select class="form-input select-filter" data-minimum-results-for-search="Infinity">
-                                <option>New York (JFK)</option>
-                                <option value="2">Beijing (PEK)</option>
-                                <option value="3">Dubai (DXB)</option>
-                                <option value="4">Los Angeles (LAX)</option>
-                                <option value="5">Hong Kong (HKG)</option>
+                              <select class="form-input select-filter" data-minimum-results-for-search="Infinity" name="to_city">
+                               
+                                <option value="Abuja (ABV)">Abuja (ABV)</option>
+                               
+                                <option value="Akure (AKR)">Akure (AKR)</option>
+                                <option value="Asaba (ABB)">Asaba (ABB)</option>
+                                <option value="5">Lagos (LOG)</option>
+                                <option value="4">Port Harcourt (PHC)</option>
+                                <option value="5">Owere (QOW)</option>
+                                <option value="2">Sokoto  (SKO)</option>
+                                <option value="3">Oyo (QUO)</option>
+                                <option value="4">Yola (YOL)</option>
                               </select>
                             </div>
                             <div class="form-wrap">
@@ -88,11 +108,11 @@
                             <div class="form-wrap">
                               <label class="form-label-outside">Cabin Class</label>
                               <!--Select 2-->
-                              <select class="form-input select-filter" data-minimum-results-for-search="Infinity">
-                                <option>Economy</option>
-                                <option value="2">Premium Economy</option>
-                                <option value="3">Business</option>
-                                <option value="4">First</option>
+                              <select class="form-input select-filter" data-minimum-results-for-search="Infinity" name="class_type">
+                                <option value="Economy">Economy</option>
+                                <option value="Premium Economy">Premium Economy</option>
+                                <option value="Business">Business</option>
+                                <option value="First">First</option>
                               </select>
                             </div>
                           </div>
@@ -109,7 +129,7 @@
                           <div class="col-12 col-sm">
                             <div class="form-wrap">
                               <label class="form-label-outside">Return</label>
-                              <input class="form-input" type="text" data-time-picker="date" data-constraints="@Required" name="return">
+                              <input class="form-input" type="text" data-time-picker="date" data-constraints="@Required" name="return_date">
                             </div>
                           </div>
                           <div class="col-md-6 col-xl-4">
@@ -117,19 +137,19 @@
                               <div class="col-sm-6">
                                 <div class="form-wrap">
                                   <label class="form-label-outside">Adults (16+)</label>
-                                  <input class="form-input" type="number" min="0" value="2" data-constraints="@Numeric">
+                                  <input class="form-input" type="number" min="0" max="7" value="1" data-constraints="@Numeric" name="adult">
                                 </div>
                               </div>
                               <div class="col-sm-6">
                                 <div class="form-wrap">
                                   <label class="form-label-outside">Children</label>
-                                  <input class="form-input" type="number" min="0" value="0" data-constraints="@Numeric">
+                                  <input class="form-input" type="number" min="0" max="3" value="0" data-constraints="@Numeric" name="childrens">
                                 </div>
                               </div>
                             </div>
                           </div>
                           <div class="col-12 col-xl-clear-flex align-items-md-end text-center text-xl-right">
-                            <button class="button button-primary button-sm button-naira button-naira-up"><span class="icon fa-search"></span><span>Search Flight</span></button>
+                            <button type="submit" class="button button-primary button-sm button-naira button-naira-up"><span class="icon fa-search"></span><span>Search Flight</span></button>
                           </div>
                         </div>
                       </div>

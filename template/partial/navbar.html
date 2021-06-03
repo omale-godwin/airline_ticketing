@@ -14,16 +14,71 @@
           <div class="rd-navbar-nav-wrap">
             <!-- RD Navbar Nav-->
             <ul class="rd-navbar-nav">
-              <li class="active"><a href="{% url 'index' %}">Home</a></li>
-              <li><a href="{% url 'about' %}">About</a>
+              <li  {% if '/' == request.path %}
+              class="active"
+            {% else %}
+              class=""
+            {% endif %}><a href="{% url 'index' %}">Home</a></li>
+              <li {% if 'about' in request.path %}
+              class="active"
+            {% else %}
+              class=""
+            {% endif %}><a href="{% url 'about' %}">About</a>
                 <!-- RD Navbar Dropdown-->
                
               </li>
-              <li><a href="{% url 'blog' %}"">Blog</a>
+              <li {% if 'blog' in request.path %}
+              class="active"
+            {% else %}
+              class=""
+            {% endif %}><a href="{% url 'blog' %}"">Blog</a>
                 <!-- RD Navbar Dropdown-->
               </li>
             
-              <li><a href="{% url 'contact' %}">Contacts</a></li>
+              <li {% if 'contact' in request.path %}
+              class="active"
+            {% else %}
+              class=""
+            {% endif %}><a href="{% url 'contact' %}">Contacts</a>
+          </li>
+              
+              {% if user.is_authenticated %} 
+              <li {% if 'dashboard' in request.path %}
+              class="active"
+            {% else %}
+              class=""
+            {% endif %}>
+              <a class="nav-link" href="{% url 'dashboard' %}">
+                Welcome {{ user.username }} (Dashboard)</a> 
+             </li>
+             <li class="nav-item mr-3">
+               <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                 <i class="fas fa-sign-out-alt"></i> Logout
+               </a>
+               <form action="{% url 'logout' %}" method="POST" id="logout">
+                 {% csrf_token %}
+                 <input type="hidden">
+               </form>
+             </li>
+           {% else %}
+             
+              <li {% if 'login' in request.path %}
+              class="active"
+            {% else %}
+              class=""
+            {% endif %}><a href="{% url 'login' %}">Login</a></li>
+              <li {% if 'register' in request.path %}
+              class="active"
+            {% else %}
+              class=""
+            {% endif %}><a href="{% url 'register' %}">Register</a></li>
+       
+
+
+              {% endif %}
+             
+              
+
             </ul>
             <!--RD Navbar Search-->
             <div class="rd-navbar-search"><a class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span class="fa-search"></span></a>

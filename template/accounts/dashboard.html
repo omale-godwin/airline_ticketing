@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %} | User Dashboard {% endblock %}
+
+{% block content %}
+<section class="bg-image-06">
+  <div class="breadcrumb-wrapper">
+    <div class="container context-dark section-30 section-xl-top-120">
+      <h5>Pick the Best Ticket</h5>
+      <h1 class="text-ubold">Tickets List</h1>
+      <ol class="breadcrumb">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="#">Pages</a></li>
+        <li>Tickets List
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Alerts -->
+  {% include 'partial/_alerts.html' %}
+
+  <section id="dashboard" class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Welcome {{ user.first_name }} {{ user.last_name }}</h2>
+          {% if contacts %}
+            <!-- <p>Here are the property listings that you have inquired about</p> -->
+            <!-- <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Property</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for contact in contacts %}
+                  <tr>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.listing }}</td>
+                    <td>
+                      <a class="btn btn-light" href="{% url 'listing' contact.ticket_id %}">View Listing</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table> -->
+          {% else %}
+            <p>FLIGHT BOOKING TICKET </p>
+            <a href="{% url 'index' %}" class="button button-primary button-sm button-naira button-naira-up"><span class="icon fa-send"></span><span>BOOK TICKET NOW</span></a>
+                     
+           
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

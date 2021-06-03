@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %} | Register Account {% endblock %}
+
+{% block content %}
+  
+                <!-- Alerts -->
+            
+               
+                <section class="bg-image-06">
+                  <div class="breadcrumb-wrapper">
+                    <div class="container context-dark section-30 section-xl-top-120">
+                      <h5>REgistere</h5>
+                      <h1 class="text-ubold">REgistere pages</h1>
+                      <ol class="breadcrumb">
+                        <li><a href="index-2.html">Home</a></li>
+                        <li><a href="#">REgistere</a></li>
+                        <li>REgistere Page
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </section>
+               
+  
+                <div class="section-top-80 section-lg-top-90">
+                  {% include 'partial/_alerts.html' %}
+                  <h4 class="text-bold text-capitalize">REgistere Now</h4>
+                  <div class="row row-offset-1 justify-content-sm-center">
+                    <div class="col-lg-8">
+                      <!-- RD Mailform-->
+                      <form action="{% url 'register' %}" method="POST">
+                        {% csrf_token %}
+                                <div class="row row-20">
+                          <div class="col-md-6">
+                            <div class="form-wrap">
+                              <label class="form-label-outside" for="contact-name">First name</label>
+                              <input class="form-input form-input-gray" id="contact-name" type="text" name="name" data-constraints="@Required">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-wrap">
+                              <label class="form-label-outside" for="contact-surname">Last name</label>
+                              <input class="form-input form-input-gray" id="contact-surname" type="text" name="surname" data-constraints="@Required">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-wrap">
+                              <label class="form-label-outside" for="contact-email">E-mail</label>
+                              <input class="form-input form-input-gray" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-wrap">
+                              <label class="form-label-outside" for="contact-phone">Phone</label>
+                              <input class="form-input form-input-gray" id="contact-phone" type="text" name="phone" placeholder="enter your phone number" data-constraints="">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-wrap">
+                              <label class="form-label-outside" for="contact-email">Password</label>
+                              <input class="form-input form-input-gray" id="contact-email" type="password" name="pass" data-constraints="@Required @Email">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-wrap">
+                              <label class="form-label-outside" for="contact-phone">Confirm Password</label>
+                              <input class="form-input form-input-gray" id="contact-phone" type="password" name="pass2" data-constraints="@Required @Integer">
+                            </div>
+                          </div>
+                        </div>
+                        <button class="button p-3 mb-5 btn-block button-primary button-xs button-naira button-naira-up" type="submit"><span class="icon fa-send-o"></span><span>Submit</span></button>
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+  
+                
+            
+   
+
+  {% endblock %}

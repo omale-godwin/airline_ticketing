@@ -182,3 +182,7 @@ CloudflareApps.installs["z8mJiV6tI7w0"].options = { ie: 7 };
   script.src = "/static/js/z.js";
   document.head.appendChild(script);
 })();
+
+setTimeout(function () {
+  $("#message").fadeOut("slow");
+}, 3000);

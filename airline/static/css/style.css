@@ -311,19 +311,19 @@ dl {
 	margin-top: 30px;
 	background-color: #fff;
 	transition: .4s box-shadow;
-	padding: 30px 12px;
+	padding: 5px 12px;
 }
 
 @media (min-width: 768px) {
 	.list-tickets .list-item {
 		text-align: left;
-		padding: 13px 30px 12px 30px;
+		padding: 13px 3px 12px 3px;
 	}
 }
 
 @media (min-width: 1600px) {
 	.list-tickets .list-item {
-		padding: 13px 12.2% 12px 40px;
+		padding: 3px 0.2% 12px 4px;
 	}
 }
 
@@ -16337,7 +16337,7 @@ p + .group {
 .page .nav-custom-tab .form-label-outside {
 	margin-bottom: 5px;
 	color: #fff;
-	opacity: .3;
+	/* opacity: .3; */
 }
 
 .page .nav-custom-tab .form-wrap + .form-wrap {

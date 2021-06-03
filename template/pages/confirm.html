@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="bg-image-06">
+    <div class="breadcrumb-wrapper">
+      <div class="container context-dark section-30 section-xl-top-120">
+        <h5>Choose Your Ticket</h5>
+        <h1 class="text-ubold">Confirm Your Booking</h1>
+        <ol class="breadcrumb">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="#">Pages</a></li>
+          <li>Confirmed Pages
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+<section class="section-80 section-lg-120">
+<div class="container">
+<h2 class="text-ubold">Please Confirmed Your Booking Selection Bars, Skill Bars, Counters</h2>
+<hr class="divider divider-primary divider-80 divider-offset">
+<p>These elements are vital to every website’s design, and with them you are able<br class="d-none d-lg-block">to improve the overall look of your resource and attract more clients.</p>
+<div class="row row-30 row-offset-3 justify-content-center justify-content-lg-between flex-lg-row-reverse text-lg-left">
+  <div class="col-lg-3">
+    <h5>Welcome to Our Website</h5>
+    <p>Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers.</p>
+  </div>
+  
+  <div class="col-lg-8 col-md-9">
+    <h4 style="color: green;">Passenger Details</h4>
+    <ul class="list-tickets">
+         <li class="list-item">
+          <div class="list-item-inner">
+            <div class="list-item-main">
+              <div class="list-item-top">
+                
+                <div class="list-item-logo"><img src="" alt=""></div>
+                <div class="list-item-content">
+                  <div class="list-item-content-left">
+                    <div class="text-bold text-base"></div><span class="small d-block">FULL NAME:</span>
+                  </div>
+                  <div class="list-item-content-line-wrapper small">
+                    <div class="list-item-content-line-top"></div>
+                    <div class="list-item-content-line"></div>
+                    <div class="list-item-content-line-bottom text-info-dr"></div>
+                  </div>
+                  <div class="list-item-content-right">
+                    <div class="text-bold text-base"></div><span class="small d-block">{{user_detail.first_name}} {{user_detail.last_name}} </span>
+                  </div>
+                </div>
+              </div>
+              <hr class="divider divider-wide">
+              <div class="list-item-bottom">
+                <div class="list-item-logo"><img src="images/logo-01.jpg" alt=""></div>
+                <div class="list-item-content">
+                  <div class="list-item-content-left">
+                    <div class="text-bold text-base"></div><span class="small d-block">PHONE NUMBER</span>
+                  </div>
+                  <div class="list-item-content-line-wrapper small">
+                    <div class="list-item-content-line-top"></div>
+                    <div class="list-item-content-line"></div>
+                    <div class="list-item-content-line-bottom"><span class="text-primary-dr"></span><span> </span></div>
+                  </div>
+                  <div class="list-item-content-right">
+                    <div class="text-bold text-base"></div><span class="small d-block">{{user_detail.username}}</span>
+                  </div>
+                </div>
+              </div>
+              <hr class="divider divider-wide">
+              <div class="list-item-bottom">
+                <div class="list-item-logo"><img src="images/logo-01.jpg" alt=""></div>
+                <div class="list-item-content">
+                  <div class="list-item-content-left">
+                    <div class="text-bold text-base"></div><span class="small d-block">EMAIL ADDRESS</span>
+                  </div>
+                  <div class="list-item-content-line-wrapper small">
+                    <div class="list-item-content-line-top"></div>
+                    <div class="list-item-content-line"></div>
+                    <div class="list-item-content-line-bottom"><span class="text-primary-dr"></span><span> </span></div>
+                  </div>
+                  <div class="list-item-content-right">
+                    <div class="text-bold text-base"></div><span class="small d-block">{{user_detail.email}}</span>
+                  </div>
+                </div>
+              </div>
+              <hr class="divider divider-wide">
+              <div class="list-item-bottom">
+                <div class="list-item-logo"><img src="images/logo-01.jpg" alt=""></div>
+                <div class="list-item-content">
+                  <div class="list-item-content-left">
+                    <div class="text-bold text-base"></div><span class="small d-block">CABIN CLASS</span>
+                  </div>
+                  <div class="list-item-content-line-wrapper small">
+                    <div class="list-item-content-line-top"></div>
+                    <div class="list-item-content-line"></div>
+                    <div class="list-item-content-line-bottom"><span class="text-primary-dr"></span><span> </span></div>
+                  </div>
+                  <div class="list-item-content-right">
+                    <div class="text-bold text-base"></div><span class="small d-block">{{class}}</span>
+                  </div>
+                </div>
+              </div>
+              <hr class="divider divider-wide">
+              <div class="list-item-bottom">
+                <div class="list-item-logo"><img src="images/logo-01.jpg" alt=""></div>
+                <div class="list-item-content">
+                  <div class="list-item-content-left">
+                    <div class="text-bold text-base"></div><span class="small d-block">DEPARTURE DATE</span>
+                  </div>
+                  <div class="list-item-content-line-wrapper small">
+                    <div class="list-item-content-line-top"></div>
+                    <div class="list-item-content-line"></div>
+                    <div class="list-item-content-line-bottom"><span class="text-primary-dr"></span><span> </span></div>
+                  </div>
+                  <div class="list-item-content-right">
+                    <div class="text-bold text-base"></div><span class="small d-block">{{date_choosen}}</span>
+                  </div>
+                </div>
+              </div>
+              <hr class="divider divider-wide">
+              <div class="list-item-bottom">
+                <div class="list-item-logo"><img src="images/logo-01.jpg" alt=""></div>
+                <div class="list-item-content">
+                  <div class="list-item-content-left">
+                    <div class="text-bold text-base"></div><span class="small d-block">NUMBER OF ADULT</span>
+                  </div>
+                  <div class="list-item-content-line-wrapper small">
+                    <div class="list-item-content-line-top"></div>
+                    <div class="list-item-content-line"></div>
+                    <div class="list-item-content-line-bottom"><span class="text-primary-dr"></span><span> </span></div>
+                  </div>
+                  <div class="list-item-content-right">
+                    <div class="text-bold text-base"></div><span class="small d-block">{{adult}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+          <div class="small text-gray-light list-item-subtitle">design by gradedproject.com </div>
+        </li>
+    </ul>
+
+
+
+
+    <ul class="list-tickets">
+      {% if ticket %}
+      
+       <li class="list-item">
+        <div class="list-item-inner">
+          <div class="list-item-main">
+            <div class="list-item-top">
+              <div class="list-item-logo"><img src="{{ ticket.flight_no.jet_photo.url }}" alt=""></div>
+              <div class="list-item-content">
+                <div class="list-item-content-left">
+                  <div class="text-bold text-base">{{ticket.from_city}}</div><span class="small d-block">Start</span>
+                </div>
+                <div class="list-item-content-line-wrapper small">
+                  <div class="list-item-content-line-top"></div>
+                  <div class="list-item-content-line"></div>
+                  <div class="list-item-content-line-bottom text-info-dr"></div>
+                </div>
+                <div class="list-item-content-right">
+                  <div class="text-bold text-base">{{ticket.to_city}}</div><span class="small d-block">Landed</span>
+                </div>
+              </div>
+            </div>
+            <hr class="divider divider-wide">
+            <div class="list-item-bottom">
+              <div class="list-item-logo"><img src="images/logo-01.jpg" alt=""></div>
+              <div class="list-item-content">
+                <div class="list-item-content-left">
+                  <div class="text-bold text-base">{{ticket.departure_time}}</div><span class="small d-block">Time Start</span>
+                </div>
+                <div class="list-item-content-line-wrapper small">
+                  <div class="list-item-content-line-top">2h 40m</div>
+                  <div class="list-item-content-line"></div>
+                  <div class="list-item-content-line-bottom"><span class="text-primary-dr">Direct</span><span> </span></div>
+                </div>
+                <div class="list-item-content-right">
+                  <div class="text-bold text-base">{{ticket.arrival_time}}</div><span class="small d-block">Time Landed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+        <div class="small text-gray-light list-item-subtitle">Operated by Nigerian Airlines</div>
+      </li>
+      <div class="list-item-footer">
+        <h5 class="text-bold list-item-price ">#{{price}}</h5><a class=" p-3 m-3 button button-primary button-lg button-no-shadow" href="#">Make Payment Now</a>
+      </div>
+
+       {% else%}
+       <h4>NO DATA</h4>
+
+       {% endif %}
+  
+  
+  </ul>
+
+
+
+  </div>
+</div>
+</div>
+</section>
+
+<section class="section-xl-100 section-xl-bottom-140 section-80">
+<div class="container">
+<!-- TimeCircles-->
+<div class="DateCountdown-wrapper">
+  <div class="DateCountdown" data-type="until" data-date="2019-12-31 00:00:00" data-format="wdhms" data-color="#42d4ec" data-bg="rgba(245, 245, 245, 0)" data-width="0.03"></div>
+</div>
+</div>
+</section>
+
+
+{% endblock %}

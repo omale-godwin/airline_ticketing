@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} | Account Login {% endblock %}
+
+{% block content %}
+
+             
+              <section class="bg-image-06">
+                <div class="breadcrumb-wrapper">
+                  <div class="container context-dark section-30 section-xl-top-120">
+                    <h5>Login</h5>
+                    <h1 class="text-ubold">Login pages</h1>
+                    <ol class="breadcrumb">
+                      <li><a href="index-2.html">Home</a></li>
+                      <li><a href="#">Login</a></li>
+                      <li>Login Page
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </section>
+
+
+              <div class="section-top-80 section-lg-top-90">
+                 <!-- Alerts -->
+              {% include 'partial/_alerts.html' %}
+             
+                <h4 class="text-bold text-capitalize">login form</h4>
+                <ul class="group">
+                    </ul>
+                <div class="row row-offset-7 justify-content-sm-center">
+                  <div class="col-lg-6 col-xl-4 col-md-8">
+                    <!-- RD Mailform-->
+                    <form action="{% url 'login' %}" method="POST">
+                      {% csrf_token %}
+                          <div class="form-wrap">
+                        <label class="form-label-outside" for="login">Username or e-mail</label>
+                        <input class="form-input form-input-gray" id="login" type="text" name="username" data-constraints="@Required">
+                      </div>
+                      <div class="form-wrap">
+                        <label class="form-label-outside" for="password">Password</label>
+                        <input class="form-input form-input-gray" id="password" type="password" name="password" data-constraints="@Required">
+                      </div>
+                      <button class="button p-3 mb-5 btn-block button-primary button-xs button-naira button-naira-up" type="submit"><span class="icon fa-send-o"></span><span>Submit</span></button>
+                       </form>
+                  </div>
+                </div>
+              </div>
+
+              
+          
+  {% endblock %}
